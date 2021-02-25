@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"sorting/bubbleSort"
+
+	"github.com/dimasdh842/sorting_algorithm/bubbleSort"
 )
 
 func main() {
