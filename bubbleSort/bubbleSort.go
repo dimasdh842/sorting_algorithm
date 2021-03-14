@@ -11,19 +11,29 @@ func sweep(numbers []int, prevPhases int, reversed bool) bool {
 		var secondNumber int = numbers[secondIndex]
 
 		if reversed {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d697921f2206f787f491bee2a626760ae4f4b0c5
 			if firstNumber < secondNumber {
 				numbers[firstIndex] = secondNumber
 				numbers[secondIndex] = firstNumber
 				didSwap = true
 			}
+<<<<<<< HEAD
 
+=======
+>>>>>>> d697921f2206f787f491bee2a626760ae4f4b0c5
 		} else {
 			if firstNumber > secondNumber {
 				numbers[firstIndex] = secondNumber
 				numbers[secondIndex] = firstNumber
 				didSwap = true
 			}
+<<<<<<< HEAD
 
+=======
+>>>>>>> d697921f2206f787f491bee2a626760ae4f4b0c5
 		}
 
 		firstIndex++
@@ -37,7 +47,13 @@ func Sort(numbers []int, reversed bool) []int {
 	N := len(numbers)
 	i := 0
 	for i < N {
+<<<<<<< HEAD
 		sweep(numbers, i, reversed)
+=======
+		if !sweep(numbers, i, reversed) {
+			return []int{}
+		}
+>>>>>>> d697921f2206f787f491bee2a626760ae4f4b0c5
 		i++
 	}
 
