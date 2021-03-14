@@ -10,7 +10,7 @@ func main() {
 
 	numbers := []int{5, 1, 4, 3, 2, 0}
 	fmt.Println("before swap : ", numbers)
-	bubbleSort.Sort(numbers)
+	bubbleSort.Sort(numbers, false)
 	fmt.Println("after sorting : ", numbers)
 
 }
