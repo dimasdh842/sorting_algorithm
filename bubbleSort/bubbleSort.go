@@ -1,6 +1,6 @@
 package bubbleSort
 
-func sweep(numbers []int, prevPhases int) bool {
+func sweep(numbers []int, prevPhases int, reversed bool) bool {
 	var N int = len(numbers)
 	var firstIndex int = 0
 	var secondIndex int = 1
@@ -10,10 +10,19 @@ func sweep(numbers []int, prevPhases int) bool {
 		var firstNumber int = numbers[firstIndex]
 		var secondNumber int = numbers[secondIndex]
 
-		if firstNumber > secondNumber {
-			numbers[firstIndex] = secondNumber
-			numbers[secondIndex] = firstNumber
-			didSwap = true
+		if reversed {
+
+			if firstNumber < secondNumber {
+				numbers[firstIndex] = secondNumber
+				numbers[secondIndex] = firstNumber
+				didSwap = true
+			}
+		} else {
+			if firstNumber > secondNumber {
+				numbers[firstIndex] = secondNumber
+				numbers[secondIndex] = firstNumber
+				didSwap = true
+			}
 		}
 
 		firstIndex++
@@ -23,11 +32,11 @@ func sweep(numbers []int, prevPhases int) bool {
 	return didSwap
 }
 
-func Sort(numbers []int) []int {
+func Sort(numbers []int, reversed bool) []int {
 	N := len(numbers)
 	i := 0
 	for i < N {
-		if !sweep(numbers, i) {
+		if !sweep(numbers, i, reversed) {
 			return []int{}
 		}
 		i++
